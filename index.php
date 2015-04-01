@@ -1,9 +1,11 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+include 'Includes/Cliente-class.php';
 
-?>
+$Cliente = new Cliente();
+
+$Cliente->nome="teste";
+
+echo $Cliente->nome;
+
+
