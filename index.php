@@ -15,10 +15,15 @@ $Cliente->setBairro("Arvore Grande");
 $Cliente->setCidade("Pouso Alegre");
 $Cliente->setCep("37550000");
 
-echo var_dump($Cliente);
+
 $ClienteDao = new ClienteDAO();
 
 echo $ClienteDao->Inserir($Cliente);
+
+
+$clientes = $ClienteDao->GetId(1);
+
+?>
  
 
 

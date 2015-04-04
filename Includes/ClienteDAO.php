@@ -30,6 +30,37 @@ public function Inserir(Cliente $cliente) {
     }
     
     }
+    
+    public function GetId($id){
+       try { 
+           
+           
+     $banco = new Conexao();
+    
+     $conexao=$banco->conectar();     
+     $sql="select * from cliente where ID =:id";
+        
+     $preparar_sql=$conexao->prepare($sql);
+     
+     $preparar_sql->bindValue(":id", $id);
+     $preparar_sql->execute();
+       }catch(PDOException $e){
+        echo $e->getMessage();
+           
+       }
+       $lista = $preparar_sql->fetchAll(PDO::FETCH_OBJ);
+     return $this->ListarDados($lista);
+    }
+    
+   private function ListarDados($lista){
+        
+        $cliente = new Cliente();
+        foreach ($lista as $listar ){
+        $cliente->setId ($listar->id);
+        }
+        
+        return $cliente;
+    }
 }
 ?>
 
