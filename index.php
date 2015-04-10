@@ -4,8 +4,11 @@ include "Includes/Cliente-class.php";
 include "Includes/ClienteDAO.php";
 
 $Cliente = new Cliente();
+$ClienteResposta = new Cliente();
 
-$Cliente->setId(2);
+
+
+$Cliente->setId(3);
 $Cliente->setNome("Luuan");
 $Cliente->setCpf("888575258");
 $Cliente->setTelefone("87452985");
@@ -21,7 +24,9 @@ $ClienteDao = new ClienteDAO();
 echo $ClienteDao->Inserir($Cliente);
 
 
-$clientes = $ClienteDao->GetId(1);
+$ClienteResposta = $ClienteDao->GetId(1);
+
+echo "Nome é ".$ClienteResposta->getNome();
 
 ?>
  

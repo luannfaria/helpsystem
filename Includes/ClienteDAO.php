@@ -52,11 +52,22 @@ public function Inserir(Cliente $cliente) {
      return $this->ListarDados($lista);
     }
     
+    
+    //Método para transferir os dados para o objeto CLiente
    private function ListarDados($lista){
         
         $cliente = new Cliente();
         foreach ($lista as $listar ){
         $cliente->setId ($listar->id);
+        $cliente->setBairro($listar->bairro);
+        $cliente->setCep($listar->cep);
+        $cliente->setCidade($listar->cidade);
+        $cliente->setCpf($listar->cpf);
+        $cliente->setNome($listar->nome);
+        $cliente->setNumero($listar->numero);
+        $cliente->setRua($listar->rua);
+        $cliente->setTelefone($listar->telefone);
+        
         }
         
         return $cliente;
