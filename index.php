@@ -1,32 +1,29 @@
 <?php
-
-include "Includes/Cliente-class.php";
-include "Includes/ClienteDAO.php";
-
-$Cliente = new Cliente();
-$ClienteResposta = new Cliente();
+include_once 'includes/Usuario-class.php';
+include_once 'Includes/UsuarioDAO.php';
 
 
-
-$Cliente->setId(3);
-$Cliente->setNome("Luuan");
-$Cliente->setCpf("888575258");
-$Cliente->setTelefone("87452985");
-$Cliente->setRua("avenida infinito");
-$Cliente->setNumero(52);
-$Cliente->setBairro("Arvore Grande");
-$Cliente->setCidade("Pouso Alegre");
-$Cliente->setCep("37550000");
+/*$usuario = new Usuario();
+$usuarioResultado = new Usuario();
 
 
-$ClienteDao = new ClienteDAO();
 
-echo $ClienteDao->Inserir($Cliente);
+$usuario->setId(1);
+$usuario->setLogin("Isnack");
+$usuario->setSenha("1234");
 
 
-$ClienteResposta = $ClienteDao->GetId(1);
 
-echo "Nome é ".$ClienteResposta->getNome();
+$usuarioDao = new UsuarioDAO();
+
+ $usuarioDao->Inserir($usuario);*/
+$usuarioDao = new UsuarioDAO();
+
+$usuarioResultado = $usuarioDao->GetUsuario("Isnack", "1234");
+
+
+
+var_dump($usuarioResultado);
 
 ?>
  
