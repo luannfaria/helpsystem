@@ -1,19 +1,8 @@
 <?php
-class Conexao {
-
-    
-  
-    public  function conectar() {
-        try  {   
-           $pdo = new PDO('mysql:host=localhost;dbname=local', 'root', 'admin');
-        }catch(PDOException $e){
-            echo $e->getMessage();
-        }
-       
-        return $pdo;
-        
-    }
-
-}
-
+$host="localhost";
+$user="root";
+$pass="clara02";
+$banco="local";
+mysql_connect($host, $user,$pass) or die("BANCO NAO CONECTOU");
+mysql_select_db($banco)or die("nao selecionou banco");
 ?>
