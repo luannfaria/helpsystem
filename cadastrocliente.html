@@ -5,19 +5,23 @@
 <title>Cadastro Cliente</title>
 </head>
 <body>
-<form method="post" action="">
+<form method="post" action="cadastro.php">
 	<label>Nome Completo</label>
-		<input type="text"/>
+		<input type="text" name="nome"/>
 	<label>cpf</label>
-		<input type="text"/><br>
+		<input type="text" name="cpf"/><br>
 	<label>Rua</label> 
-		<input type="text"/>	
+		<input type="text" name="rua"/>	
 	<label>bairro</label>
-		<input type="text"/>
+		<input type="text" name="bairro"/>
 		<label>Numero</label> 
-		<input type="text"/>	
+		<input type="text" name="numero"/>	
 	<label>cidade</label>
-		<input type="text"/><br>
+		<input type="text" name="cidade"/><br>
+                <label>Telefone</label>
+		<input type="text" name="telefone"/><br>
+                 <label>Cep</label>
+		<input type="text" name="cep"/><br>
 		  <input id="cadastrar" type="submit" value="Cadastrar"/>
 		
 </form>		
