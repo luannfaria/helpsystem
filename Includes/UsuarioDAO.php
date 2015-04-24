@@ -7,8 +7,7 @@ public function Inserir(Usuario $usuario) {
     try{
         
      $banco = new Conexao();
-     $conexao=$banco->conectar();
-     
+     $conexao=$banco->conectar();     
      $sql="Insert into usuario values(:id,:login,:senha)";
      $preparar_sql = $conexao->prepare($sql);
      $preparar_sql->bindValue(":id", $usuario->getId());
@@ -25,23 +24,27 @@ public function Inserir(Usuario $usuario) {
        public function GetUsuario($login,$senha){
        try { 
            
-           
-     $banco = new Conexao();
-    
+     $banco = new Conexao();    
      $conexao=$banco->conectar();     
      $sql="select * from usuario where login =:login and senha=:senha";
-        
-     $preparar_sql=$conexao->prepare($sql);
-     
+     $preparar_sql=$conexao->prepare($sql);     
      $preparar_sql->bindValue(":login", $login);
      $preparar_sql->bindValue(":senha", $senha);
      $preparar_sql->execute();
-       }catch(PDOException $e){
-        echo $e->getMessage();
-           
-       }
-       $lista = $preparar_sql->fetchAll(PDO::FETCH_OBJ);
+     }catch(PDOException $e){
+      
+         echo $e->getMessage();           
+       }     
+      
+       $registro = count( $preparar_sql->fetchAll(PDO::FETCH_OBJ));
+     //Verificando se tem registro
+       if($registro !=0){
+     $lista = $preparar_sql->fetchAll(PDO::FETCH_OBJ);
      return $this->ListarDados($lista);
+       }  else
+       //Se não tem retorna nulo      
+       return null;    
+       
     }
     
     
@@ -53,14 +56,9 @@ public function Inserir(Usuario $usuario) {
         $usuario->setId ($listar->id);
         $usuario->setLogin($listar->login);
         $usuario->setSenha($listar->senha);
-                
         }
-        
         return $usuario;
     }
-    
-    
-    
 }
 ?>
 
