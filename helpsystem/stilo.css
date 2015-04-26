@@ -1,0 +1,72 @@
+body {
+	background: #000 url(imagens/backlogin.jpg) no-repeat;
+}
+#divlogin {
+	width: 350px;
+	margin: 50px auto;	
+	margin-top:230px;
+}
+fieldset {
+	position: static;
+}
+label {
+	
+		
+	display: block;
+	margin-bottom: 4px;
+	font-style:italic;
+	font-family:verdana;
+	font-size:12px;
+}
+input[type='text'] {
+	-webkit-border-radius: 6px;
+	background-color:#DCDCDC;
+	border: 1px solid #000;
+}
+input[type='password'] {
+	-webkit-border-radius: 6px;
+	background-color:#DCDCDC;
+	border: 1px solid #000;
+}
+
+legend{
+	font-family:verdana;
+	color:#696969;
+	font-size:20px;
+}
+#imglogin{
+	margin-top:5px;
+	float: right;
+	width: 130px;
+	height: 100px;
+}
+#imgentrar{
+	margin-top:10px;
+	width: 26px;
+	float:right;
+	margin-right: 40px;
+}
+#imgcancelar{
+	margin-top:10px;
+	width: 26px;
+	float:left;
+	margin-left: 10px;
+}
+#divcliente {
+	width: 700px;
+	margin: 50px auto;	
+	margin-top:10px;
+}
+#imgmenu{
+	margin-top:30px;
+	width: 60px;
+}
+#menuprincipal{
+	
+	position:absolute;
+	width:150px;
+	height:560px;	
+
+	border-radius:11px; 
+	
+}
