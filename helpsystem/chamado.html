@@ -2,23 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
-	<title>BEM VINDO AO HELPSYSTEM</title>
 <link rel="stylesheet" href="stilo.css" type="text/css" />
-	<script type="text/javascript src=js/jquery-1.11.2.min.js"></script>
-
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("menuprincipal a").click(function( e ){
-			e.preventDefault();
-			var href = $(this).attr('href');
-			$("divcentral").load(href+"#divcentral");
-		});
-		});
-	</script>
+<title>Chamados</title>
 </head>
 <body>
-<h1>Help System v1.0</h1>
+
+<h1>Chamados</h1>
 <div id="menuprincipal" style="background-image: url(imagens/backmenu.jpg)">
 	
 <ul>
@@ -27,10 +16,8 @@
 	<a href="relatorios.html"><img id="imgmenu" title="Relatorio" src="imagens/relatorio.png"></a><br>
 	<a href="usuario.html"><img id="imgmenu" title="Configurações" src="imagens/configure.png"></a>
 </ul>
-
-</div>	
-<div id="divcentral">
 </div>
-
+	<div id="divcentral">
+	</div>
 </body>
 </html>

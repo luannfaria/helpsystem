@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="stilo.css" type="text/css" />
 <title>Cadastre um novo usuario</title>
 </head>
 <body>
-
+<h1>Cadastro de Usuarios</h1>
+<div id="menuprincipal" style="background-image: url(imagens/backmenu.jpg)">
+	
+<ul>
+	<a href="cadastrocliente.html"><img id="imgmenu" title="Clientes" src="imagens/client.png"></a><br>
+	<a href="chamado.html"><img id="imgmenu" title="Chamados" src="imagens/support.png"></a><br>
+	<a href="relatorios.html"><img id="imgmenu" title="Relatorio" src="imagens/relatorio.png"></a><br>
+	<a href="usuario.html"><img id="imgmenu" title="Configurações" src="imagens/configure.png"></a>
+</ul>
+</div>
+<div id="divcentral">	
+	<div id="divlogin">
+		<fieldset>
+		
+			<legend>Cadastre novo usuario</legend>
+				<img id="imglogin"  src="imagens/adduser.png"/>
+           			 <label>Usuario</label>
+            <input  name="login" type="text"/><br>
+          			 <label>Senha</label>
+            <input  name="senha" type="password"/><br>
+            	 <label>Confirme senha</label>
+            <input  name="senha" type="password"/><br>
+            <input id="imgcancelar" type="image" title="Cancelar" src="imagens/cancelar.png" value="reset" />
+            <input id="imgentrar" type="image" title="Entrar" src="imagens/entrar.png" value="submit" />
+         </fieldset>   
+     </div>          
+</div>
 </body>
 </html>

@@ -57,6 +57,10 @@ legend{
 	margin: 50px auto;	
 	margin-top:10px;
 }
+#diverror{
+	width: 500px;
+	margin: 50px auto;	
+}
 #imgmenu{
 	margin-top:30px;
 	width: 60px;
@@ -68,5 +72,15 @@ legend{
 	height:560px;	
 
 	border-radius:11px; 
+	
+}
+h1{
+	color:#7CFC00;
+	font-style: italic;
+	text-shadow:0.1em 0.1em 0.2em black;
+}
+#error{
+		margin-right:260px;
+		float:right;
 	
 }

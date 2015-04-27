@@ -4,12 +4,23 @@
 <meta charset="ISO-8859-1">
 <title>Cadastro Cliente</title>
 <link rel="stylesheet" href="stilo.css" type="text/css" />
+
 </head>
 <body>
-<form method="post" action="cadastro.php">
+<h1>Cadastro de Cliente</h1>
+<div id="menuprincipal" style="background-image: url(imagens/backmenu.jpg)">
 	
-	<div id="divcliente">
-	<fieldset>
+<ul>
+	<a href="cadastrocliente.html"><img id="imgmenu" title="Clientes" src="imagens/client.png"></a><br>
+	<a href="chamado.html"><img id="imgmenu" title="Chamados" src="imagens/support.png"></a><br>
+	<a href="relatorios.html"><img id="imgmenu" title="Relatorio" src="imagens/relatorio.png"></a><br>
+	<a href="usuario.html"><img id="imgmenu" title="Configurações" src="imagens/configure.png"></a>
+</ul>
+</div>	
+<form method="post" action="cadastro.php">
+	<div id="divcentral">
+		<div id="divcliente">
+			<fieldset>
 	<legend>Cadastro Cliente</legend>
 			<label>Nome Completo</label>
 				<input type="text" name="nome"/>
@@ -26,9 +37,10 @@
              <label>Telefone</label>
 					<input type="text" name="telefone"/><br>
              <label>Cep</label>
-					<input type="text" name="cep"/><br>
-		 <input id="imgentrar" type="image" src="imagens/entrar.png" value="submit" />
+					<input type="text"  name="cep"/><br>
+		 <input id="imgentrar" type="image" src="imagens/add.png" title="Adicionar Cliente" value="submit" />
 		 </fieldset>
+	</div>
 	</div>
 </form>		
 </body>
