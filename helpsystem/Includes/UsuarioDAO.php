@@ -1,64 +1,35 @@
 <?php
-include_once 'includes/Usuario-class.php';
-include "includes/Conexao.php";
+include_once 'Includes/Usuario-class.php';
+include "Conexao.php";
 
 class UsuarioDAO{
-public function Inserir(Usuario $usuario) {
-    try{
-        
-     $banco = new Conexao();
-     $conexao=$banco->conectar();     
-     $sql="Insert into usuario values(:id,:login,:senha)";
-     $preparar_sql = $conexao->prepare($sql);
-     $preparar_sql->bindValue(":id", $usuario->getId());
-     $preparar_sql->bindValue(":login", $usuario->getLogin());
-     $preparar_sql->bindValue(":senha", $usuario->getSenha());
-     
-     return $preparar_sql->execute();
-    }  catch (PDOException $e){
-        echo $e->getMessage();
-    }
+    /**
+     *@access public
+     * @param $usuario 
+     * 
+     */
+    public function Inserir(Usuario $usuario) {
+    
+    $id= $usuario->getId();
+    $login=$usuario->getLogin();
+    $senha=$usuario->getSenha();
+    
+   $query=mysql_query("Insert into usuario values('$id','$login','$senha')") or die("erro ao selecionar");
+    
+     return $query; 
     
     }
     
-       public function GetUsuario($login,$senha){
-       try { 
-           
-     $banco = new Conexao();    
-     $conexao=$banco->conectar();     
-     $sql="select * from usuario where login =:login and senha=:senha";
-     $preparar_sql=$conexao->prepare($sql);     
-     $preparar_sql->bindValue(":login", $login);
-     $preparar_sql->bindValue(":senha", $senha);
-     $preparar_sql->execute();
-     }catch(PDOException $e){
-      
-         echo $e->getMessage();           
-       }     
-      
-       $registro = count( $preparar_sql->fetchAll(PDO::FETCH_OBJ));
-     //Verificando se tem registro
-       if($registro !=0){
-     $lista = $preparar_sql->fetchAll(PDO::FETCH_OBJ);
-     return $this->ListarDados($lista);
-       }  else
-       //Se não tem retorna nulo      
-       return null;    
+    public function GetUsuario($login,$senha){
        
+           
+        $query=mysql_query("SELECT * FROM usuario WHERE login='$nome' AND senha='$senha'") or die("erro ao selecionar");
+       return $query;
     }
     
     
-    //Método para transferir os dados para o objeto CLiente
-   private function ListarDados($lista){
-        
-        $usuario = new Usuario();
-        foreach ($lista as $listar ){
-        $usuario->setId ($listar->id);
-        $usuario->setLogin($listar->login);
-        $usuario->setSenha($listar->senha);
-        }
-        return $usuario;
-    }
+    
+ 
 }
 ?>
 
