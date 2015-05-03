@@ -2,19 +2,19 @@
 class Atendimento{
     
  private $id;
+ private $ClienteId;
  private $data;
  private $observacao;
  private $status;
- 
- //Métodos Get Set da classe
-     public function __get($atrib){
-     
-          return $this->$atrib;
-      }
-      
-      public function __set($atrib, $value){
-          $this->$atrib = $value;
-      }
+ function getClienteId() {
+     return $this->ClienteId;
+ }
+
+ function setClienteId($ClienteId) {
+     $this->ClienteId = $ClienteId;
+ }
+
+  
     
       function getId() {
           return $this->id;
