@@ -7,64 +7,46 @@ class ClienteDAO{
     
 
 
-public function Inserir(Cliente $cliente) {
-    $id= $cliente->getId();
-    $bairro=$cliente->getBairro();
-    $cep=$cliente->getCep();
-    $cidade=$cliente->getCidade();
-    $cpf=$cliente->getCpf();
-    $nome=$cliente->getNome();
-   $numero=$cliente->getNumero();
-   $rua=$cliente->getRua();
-   $telefone=$cliente->getTelefone();
-    
-   $query=mysql_query("Insert into cliente values('$id','$nome','$cpf','$telefone','$rua','$numero','$bairro','$cidade','$cep')") or die("erro ao selecionar");
-    echo var_dump($query);
-     return $query; 
-    
-    }
-    
-    public function GetId($id){
-       try { 
-           
-           
-     $banco = new Conexao();
-    
-     $conexao=$banco->conectar();     
-     $sql="select * from cliente where ID =:id";
+    public function Inserir(Cliente $cliente) {
+        $id = $cliente->getId();
+        $bairro = $cliente->getBairro();
+        $cep = $cliente->getCep();
+        $cidade = $cliente->getCidade();
+        $cpf = $cliente->getCpf();
+        $nome = $cliente->getNome();
+        $numero = $cliente->getNumero();
+        $rua = $cliente->getRua();
+        $telefone = $cliente->getTelefone();
+
+        $query = mysql_query("Insert into cliente values('$id','$nome','$cpf','$telefone','$rua','$numero','$bairro','$cidade','$cep')") or die("erro ao selecionar");
         
-     $preparar_sql=$conexao->prepare($sql);
-     
-     $preparar_sql->bindValue(":id", $id);
-     $preparar_sql->execute();
-       }catch(PDOException $e){
-        echo $e->getMessage();
-           
-       }
-       $lista = $preparar_sql->fetchAll(PDO::FETCH_OBJ);
-     return $this->ListarDados($lista);
+        return $query;
     }
-    
-    
-    //Método para transferir os dados para o objeto CLiente
-   private function ListarDados($lista){
-        
+
+    public function GetId($id) {
+
+
+        $query = mysql_query("SELECT * from cliente where id='$id'") or die("erro ao selecionar");
         $cliente = new Cliente();
-        foreach ($lista as $listar ){
-        $cliente->setId ($listar->id);
-        $cliente->setBairro($listar->bairro);
-        $cliente->setCep($listar->cep);
-        $cliente->setCidade($listar->cidade);
-        $cliente->setCpf($listar->cpf);
-        $cliente->setNome($listar->nome);
-        $cliente->setNumero($listar->numero);
-        $cliente->setRua($listar->rua);
-        $cliente->setTelefone($listar->telefone);
-        
+        while ($row = mysql_fetch_object($query)) {
+            $cliente->setBairro($row->bairro);
+            $cliente->setCep($row->cep);
+            $cliente->setCidade($row->cidade);
+            $cliente->setCpf($row->cpf);
+            $cliente->setId($row->id);
+            $cliente->setNome($row->nome);
+            $cliente->setNumero($row->numero);
+            $cliente->setRua($row->rua);
+            $cliente->setTelefone($row->telefone);
         }
-        
         return $cliente;
     }
-}
+
+    //Lista de clientes
+    public function listarClientes($param) {
+        
+    }
+}   
+
 ?>
 
