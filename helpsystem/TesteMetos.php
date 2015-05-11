@@ -36,26 +36,18 @@ $clienteDAO->Inserir($cliente);
  $atendimento = new Atendimento();
 
  
- $atendimento->setClienteId(6);
- $atendimento->setData('2015-05-03');
- $atendimento->setId(3);
- $atendimento->setStatus('OF');
- $atendimento->setObservacao('Iniciado agora');
- 
- 
- //if($atendimentoDao->Inserir($atendimento)){
+
      
     // echo"ok";
  //}
- $atendimentoAntigo = $atendimentoDao->buscaById(3);
- 
- if($atendimentoUP=$atendimentoDao->UpdateAbrirFecharAtendimento($atendimentoAntigo, 'ON')>0){
-     echo 'Atualizado com sucesso';
- }else{
-     echo 'Não Atualizado';
- }
- 
-$atendimento = $atendimentoDao->buscaPorStatus('OF');
+ $atendimentos = $atendimentoDao->buscaPorStatus("ON");
+  
+$json = json_encode((array)$atendimentos);
+
+ echo $json;
+
+
+
 
 
 
