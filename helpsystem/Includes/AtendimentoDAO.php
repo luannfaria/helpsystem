@@ -18,11 +18,11 @@ class AtendimentoDAO {
         return $query;
     }
 
-    public function UpdateAbrirFecharAtendimento(Atendimento $atendimento, $nStatus) {
+    public function UpdateAbrirFecharAtendimento(Atendimento $atendimento, $nStatus,$nObservacao) {
         $id = $atendimento->getId();
         $status = $nStatus;
 
-        $query = mysql_query("UPDATE atendimento SET status='$status' where id='$id'") or die("erro ao Atualizar");
+        $query = mysql_query("UPDATE atendimento SET status='$status',observacao='$nObservacao' where id='$id'") or die("erro ao Atualizar");
 
         //retorna se as linhas foram afetadas ou não
         return mysql_affected_rows();
@@ -53,7 +53,7 @@ class AtendimentoDAO {
         //Instanciando a lista ou Array de objetos do tipo atendimento
         $atendimentos = array();
 
-        while ($row = mysql_fetch_object($query)) {
+     /*   while ($row = mysql_fetch_object($query)) {
             $atendimento = new Atendimento();
             $atendimento->setId($row->id);
             $atendimento->setClienteId($row->cliente);
@@ -64,7 +64,11 @@ class AtendimentoDAO {
             //alocando objeto no array
 
             $atendimentos[] = $atendimento;
-        }
+        }*/
+     while ($row = mysql_fetch_assoc($query)) {
+         $atendimentos[]=$row;
+        
+     }
 
         return $atendimentos;
     }
