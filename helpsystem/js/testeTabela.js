@@ -6,47 +6,55 @@
 
  
 
-      $( document ).ready(function() {
-        alert( "document loaded" );
-  
+  $(document).ready(function () {
+
+
     $.ajax({
-    type: 'POST',
-    url: 'TesteMetos.php',
-    dataType:"Json",
-     success: function(msg) {
-     
-      
-          // vamos criar o elemento HTML table
-    var tabela = document.getElementById("dados");
-    tabela.border = "1px";
-    tabela.cellSpacing = "0px";
-    tabela.cellPadding = "3px";
+        type: 'POST',
+        url: 'TesteMetos.php',
+        dataType: "Json",
+        success: function (msg) {
 
-    // vamos criar o corpo da tabela, ou seja, o tbody 
-    var corpo = document.createElement("tbody");
-    tabela.appendChild(corpo);
-    
-    
-    
-      
-      
-     
-         $.each(msg, function() {
-             var linha = corpo.insertRow(-1);
-          $.each(this, function(index, value) {
-            var celula = linha.insertCell(-1);
-	        celula.innerHTML =value;
-                    
-	    }); 
-         });
-      
-    
+            // vamos criar o elemento HTML table
+            var tabela = document.getElementById("dados");
+            tabela.border = "1px";
+            tabela.cellSpacing = "0px";
+            tabela.cellPadding = "3px";
 
-    // vamos anexar a tabela recém-criada a um elemento div
-    var container = document.getElementById("container");
-    container.appendChild(tabela);
-      
-    }
-  });
+            // vamos criar o corpo da tabela, ou seja, o tbody 
+            // var corpo = document.createElement("tbody");
+            // tabela.appendChild(corpo);
+
+            var row = "";
+            for (var key in msg) {
+                if (msg.hasOwnProperty(key)) {
+                    row += "<tr>";
+                    row += "<td>" + msg[key]["id"] + "</td>";
+                    row += "<td>" + msg[key]["cliente"] + "</td>";
+                    row += "<td>" + msg[key]["data"] + "</td>";
+                    row += "<td>" + msg[key]["observacao"] + "</td>";
+                    row += "<td>" + msg[key]["status"] + "</td>";
+                    row += "<td><button class='alterar-item' data-id='" + msg[key]["id"] + "'  >Alterar</button></td>";
+                    row += "</tr>";
+                }
+            }
+            $("#dados").html(row);
+
+
+
+
+            $(".alterar-item").on("click", function (event) {
+                var idItem = $(this).attr("data-id");
+                alert(idItem);
+
+            });
+
+        }
+
+
+    });
+
+
+});
+  
  
-  });
