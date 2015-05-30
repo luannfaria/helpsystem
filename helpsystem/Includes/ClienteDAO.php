@@ -43,7 +43,32 @@ class ClienteDAO{
     }
 
     //Lista de clientes
-    public function listarClientes($param) {
+    public function listarClientes() {
+        
+        $query = mysql_query("SELECT * from cliente") or die("erro ao Buscar");
+
+
+        //Instanciando a lista ou Array de objetos do tipo atendimento
+        $clientes = array();
+
+     /*   while ($row = mysql_fetch_object($query)) {
+            $atendimento = new Atendimento();
+            $atendimento->setId($row->id);
+            $atendimento->setClienteId($row->cliente);
+            $atendimento->setData($row->data);
+            $atendimento->setObservacao($row->observacao);
+            $atendimento->setStatus($row->status);
+
+            //alocando objeto no array
+
+            $atendimentos[] = $atendimento;
+        }*/
+     while ($row = mysql_fetch_assoc($query)) {
+         $clientes[]=$row;
+        
+     }
+
+        return $clientes;
         
     }
 }   

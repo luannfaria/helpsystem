@@ -7,7 +7,7 @@ include 'includes/ClienteDAO.php';
 include 'includes/AtendimentoDAO.php';
 
 
-$atendimentoDao = new AtendimentoDAO();
+//$atendimentoDao = new AtendimentoDAO();
 /*$usuario = new Usuario();
 
 $usuarioDao = new UsuarioDAO();
@@ -33,14 +33,14 @@ $cliente->setTelefone("85742471");
 $clienteDAO->Inserir($cliente);
  * */
  
- $atendimento = new Atendimento();
+ //$atendimento = new Atendimento();
 
  
-
+$clienteDAO = new ClienteDAO();
      
     // echo"ok";
  //}
- $atendimentos = $atendimentoDao->buscaPorStatus("ON");
+ $clientes = $clienteDAO->listarClientes();
   
 $json = json_encode((array)$atendimentos);
 
