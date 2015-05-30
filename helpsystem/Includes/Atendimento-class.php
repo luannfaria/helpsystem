@@ -1,58 +1,71 @@
 <?php
-class Atendimento{
-    
- private $id;
- private $ClienteId;
- private $data;
- private $observacao;
- private $status;
- function getClienteId() {
-     return $this->ClienteId;
- }
 
- function setClienteId($ClienteId) {
-     $this->ClienteId = $ClienteId;
- }
+class Atendimento {
 
-  
-    
-      function getId() {
-          return $this->id;
-      }
+    private $id;
+    private $ClienteId;
+    private $id_usuario;
+    private $titulo;
+    private $data;
+    private $observacao;
+    private $status;
 
-      function getData() {
-          return $this->data;
-      }
+    function getClienteId() {
+        return $this->ClienteId;
+    }
 
-      function getObservacao() {
-          return $this->observacao;
-      }
+    function getId_usuario() {
+        return $this->id_usuario;
+    }
 
-      function getStatus() {
-          return $this->status;
-      }
+    function getTitulo() {
+        return $this->titulo;
+    }
 
-      function setId($id) {
-          $this->id = $id;
-      }
+    function setId_usuario($id_usuario) {
+        $this->id_usuario = $id_usuario;
+    }
 
-      function setData($data) {
-          $this->data = $data;
-      }
+    function setTitulo($titulo) {
+        $this->titulo = $titulo;
+    }
 
-      function setObservacao($observacao) {
-          $this->observacao = $observacao;
-      }
+    function setClienteId($ClienteId) {
+        $this->ClienteId = $ClienteId;
+    }
 
-      function setStatus($status) {
-          $this->status = $status;
-      }
+    function getId() {
+        return $this->id;
+    }
 
+    function getData() {
+        return $this->data;
+    }
+
+    function getObservacao() {
+        return $this->observacao;
+    }
+
+    function getStatus() {
+        return $this->status;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setData($data) {
+        $this->data = $data;
+    }
+
+    function setObservacao($observacao) {
+        $this->observacao = $observacao;
+    }
+
+    function setStatus($status) {
+        $this->status = $status;
+    }
 
 }
-
-
-
-
 ?>
 

@@ -29,12 +29,14 @@
             for (var key in msg) {
                 if (msg.hasOwnProperty(key)) {
                     row += "<tr>";
-                    row += "<td>" + msg[key]["id"] + "</td>";
-                    row += "<td>" + msg[key]["cliente"] + "</td>";
+                    row += "<td>" + msg[key]["Id"] + "</td>";
+                    row += "<td>" + msg[key]["id_cliente"] + "</td>";
+                    row += "<td>" + msg[key]["id_usuario"] + "</td>";
+                     row += "<td>" + msg[key]["titulo"] + "</td>";
                     row += "<td>" + msg[key]["data"] + "</td>";
                     row += "<td>" + msg[key]["observacao"] + "</td>";
                     row += "<td>" + msg[key]["status"] + "</td>";
-                    row += "<td><button class='alterar-item' data-id='" + msg[key]["id"] + "'  >Alterar</button></td>";
+                    row += "<td><button class='alterar-item' data-id='" + msg[key]["Id"] + "'  >Alterar</button></td>";
                     row += "</tr>";
                 }
             }

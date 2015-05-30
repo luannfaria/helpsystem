@@ -9,11 +9,13 @@ class AtendimentoDAO {
 
         $id = $atendimento->getId();
         $cliente = $atendimento->getClienteId();
+        $usuario_id = $atendimento->getId_usuario();
         $data = $atendimento->getData();
         $observacao = $atendimento->getObservacao();
         $status = $atendimento->getStatus();
+        $titulo = $atendimento->getTitulo();
 
-        $query = mysql_query("Insert into Atendimento values ('$id','$cliente','$data','$observacao','$status')") or die("erro ao Cadastrar");
+        $query = mysql_query("Insert into Atendimento values ('$id','$cliente','$usuario_id','$titulo','$data','$observacao','$status')") or die("erro ao Cadastrar");
 
         return $query;
     }
@@ -40,6 +42,8 @@ class AtendimentoDAO {
             $atendimento->setData($row->data);
             $atendimento->setObservacao($row->observacao);
             $atendimento->setStatus($row->status);
+            $atendimento->setTitulo($row->titulo);
+            $atendimento->setId_usuario($row->id_usuario);
         }
 
         return $atendimento;
