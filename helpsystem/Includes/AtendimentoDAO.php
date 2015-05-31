@@ -4,7 +4,7 @@ include_once 'Includes/Atendimento-class.php';
 include "Conexao.php";
 
 class AtendimentoDAO {
-
+    //Funcão para inserir os atendimentos
     public function Inserir(Atendimento $atendimento) {
 
         $id = $atendimento->getId();
@@ -19,7 +19,7 @@ class AtendimentoDAO {
 
         return $query;
     }
-
+    // Função para atualizar os atendimentos
     public function UpdateAbrirFecharAtendimento(Atendimento $atendimento, $nStatus,$nObservacao) {
         $id = $atendimento->getId();
         $status = $nStatus;
@@ -29,7 +29,7 @@ class AtendimentoDAO {
         //retorna se as linhas foram afetadas ou não
         return mysql_affected_rows();
     }
-
+    //Função para buscar um atendimento especifico
     public function buscaById($id) {
 
         $query = mysql_query("SELECT * from atendimento where id='$id'") or die("erro ao Buscar");
@@ -48,7 +48,7 @@ class AtendimentoDAO {
 
         return $atendimento;
     }
-
+    //Função para buscar todos os atendimentos por  status
     public function buscaPorStatus($status) {
 
         $query = mysql_query("SELECT * from atendimento where status='$status'") or die("erro ao Buscar");

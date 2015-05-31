@@ -1,12 +1,11 @@
 <?php
+
 include_once 'includes/Cliente-class.php';
 include "Conexao.php";
 
-class ClienteDAO{
-    
-    
+class ClienteDAO {
 
-
+    //Função para inserir cliente
     public function Inserir(Cliente $cliente) {
         $id = $cliente->getId();
         $bairro = $cliente->getBairro();
@@ -19,10 +18,11 @@ class ClienteDAO{
         $telefone = $cliente->getTelefone();
 
         $query = mysql_query("Insert into cliente values('$id','$nome','$cpf','$telefone','$rua','$numero','$bairro','$cidade','$cep')") or die("erro ao selecionar");
-        
+
         return $query;
     }
 
+    //Função para buscar um cliente específico
     public function GetId($id) {
 
 
@@ -44,23 +44,18 @@ class ClienteDAO{
 
     //Lista de clientes popular cliente
     public function listarClientes() {
-        
-        $query = mysql_query("SELECT * from cliente") or die("erro ao Buscar");
 
+        $query = mysql_query("SELECT * from cliente") or die("erro ao Buscar");
 
         //Instanciando a lista ou Array de clientes
         $clientes = array();
-
-        
-     while ($row = mysql_fetch_assoc($query)) {
-         $clientes[]=$row;
-        
-     }
+        while ($row = mysql_fetch_assoc($query)) {
+            $clientes[] = $row;
+        }
 
         return $clientes;
-        
     }
-}   
 
+}
 ?>
 

@@ -8,6 +8,8 @@ class UsuarioDAO{
      * @param $usuario 
      * 
      */
+    
+    //Função para Inserir os usuários   
     public function Inserir(Usuario $usuario) {
     
     $id= $usuario->getId();
@@ -20,6 +22,7 @@ class UsuarioDAO{
     
     }
     
+    //Função para buscar o usuário
     public function GetUsuario($login,$senha){
        
            
