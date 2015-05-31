@@ -42,7 +42,7 @@ class ClienteDAO{
         return $cliente;
     }
 
-    //Lista de clientes
+    //Lista de clientes para popular no view
     public function listarClientes() {
         
         $query = mysql_query("SELECT * from cliente") or die("erro ao Buscar");
