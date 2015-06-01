@@ -4,7 +4,7 @@ $host="localhost";
 
 $user = "root";
 $pass = "clara02";
-$banco = "local2";
+$banco = "local";
 
 //Banco Online
 
