@@ -1,5 +1,5 @@
 <?php
-include_once 'Includes/Usuario-class.php';
+include_once 'includes/Usuario-class.php';
 include "Conexao.php";
 
 class UsuarioDAO{
@@ -16,7 +16,7 @@ class UsuarioDAO{
     $login=$usuario->getLogin();
     $senha=$usuario->getSenha();
     
-   $query=mysql_query("Insert into usuario values('$id','$login','$senha')") or die("erro ao selecionar");
+   $query=mysql_query("insert into usuario(login,senha) values('$login','$senha')")  ;
     
      return $query; 
     

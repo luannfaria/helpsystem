@@ -18,20 +18,26 @@
 </div>
 <div id="divcentral">	
 	<div id="divlogin">
+            
 		<fieldset>
 		
 			<legend>Cadastre novo usuario</legend>
 				<img id="imglogin"  src="imagens/adduser.png"/>
            			 <label>Usuario</label>
-            <input  name="login" type="text"/><br>
+            <input  name="login" type="text" required/><br>
           			 <label>Senha</label>
-            <input  name="senha" type="password"/><br>
+            <input  name="senha" type="password" required/><br>
             	 <label>Confirme senha</label>
-            <input  name="senha" type="password"/><br>
+            <input  name="repitaSenha" type="password" required/><br>
             <input id="imgcancelar" type="image" title="Cancelar" src="imagens/cancelar.png" value="reset" />
             <input id="imgentrar" type="image" title="Entrar" src="imagens/entrar.png" value="submit" />
-         </fieldset>   
+            
+         </fieldset> 
+            <div id="resultado"></div>
+        
      </div>          
 </div>
+<script  src="js/jquery-1.11.2.min.js"></script>
+<script  src="js/cadastroUsuario.js"></script>
 </body>
 </html>

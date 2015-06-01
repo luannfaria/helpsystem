@@ -8,14 +8,16 @@ include 'includes/AtendimentoDAO.php';
 
 
 //$atendimentoDao = new AtendimentoDAO();
-/*$usuario = new Usuario();
+$usuario = new Usuario();
 
 $usuarioDao = new UsuarioDAO();
-$usuario->setId(2);
-$usuario->setLogin("Logan");
+
+$usuario->setLogin("isnack3");
 $usuario->setSenha(1234);
-$usuarioDao->Inserir($usuario);
-*/
+if($usuarioDao->Inserir($usuario)){
+   echo "deu certo"; 
+}
+
 /*$cliente = new Cliente();
 
 $clienteDAO = new ClienteDAO();
@@ -36,15 +38,15 @@ $clienteDAO->Inserir($cliente);
  //$atendimento = new Atendimento();
 
  
-$clienteDAO = new ClienteDAO();
+/*$clienteDAO = new ClienteDAO();
      
     // echo"ok";
  //}
  $clientes = $clienteDAO->listarClientes();
   
-$json = json_encode((array)$atendimentos);
+$json = json_encode((array)$clientes);
 
- echo $json;
+ echo $json;*/
 
 
 

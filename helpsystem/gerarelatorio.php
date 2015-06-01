@@ -7,12 +7,12 @@ $pdf= new FPDF("P","pt","A4");
 $pdf->AddPage();
  
 $pdf->SetFont('arial','B',18);
-$pdf->Cell(0,5,"Relatório",0,1,'C');
+$pdf->Cell(0,5,"Relatï¿½rio",0,1,'C');
 $pdf->Cell(0,5,"","B",1,'C');
 $pdf->Ln(50);
 $pdf->Image('imagens/banner_help.jpg',10,10,-300);
  
-//cabeçalho da tabela 
+//cabeï¿½alho da tabela 
 $pdf->SetFont('arial','B',14);
 $pdf->Cell(90,20,'N.Chamado',1,0,"L");
 $pdf->Cell(120,20,'Nome cliente',1,0,"L");
