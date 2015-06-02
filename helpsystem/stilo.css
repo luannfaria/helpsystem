@@ -84,3 +84,8 @@ h1{
 		float:right;
 	
 }
+#divrelatorio {
+	width: 700px;
+	margin: 50px auto;	
+	margin-top:10px;
+}

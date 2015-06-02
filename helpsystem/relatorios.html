@@ -18,6 +18,25 @@
 </ul>
 </div>
 	<div id="divcentral">
+		<div id="divrelatorio">
+			<fieldset>
+				<legend>Por data</legend>
+				DE<input type="date">
+				ATÉ<input type="date">
+				<input id="imgentrar" type="image" title="Gerar Relatorio" src="imagens/entrar.png" value="submit" />
+			</fieldset>
+			<form method="post" action="gerarelatorio.php">
+			<fieldset>
+			
+				<legend>Por status</legend>
+					<input type=radio name="status" value="0">Aberto<BR>
+					<input type=radio name="status" value="1">Fechado<BR>
+					<input type=radio name="status" value="2">Todos<P>
+
+					<input id="imgentrar" type="image" title="Gerar Relatorio" src="imagens/entrar.png" value="submit" />
+			</fieldset>
+			</form>
+		</div>
 	</div>
 </body>
 </html>
