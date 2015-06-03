@@ -15,11 +15,13 @@ $usuario->setSenha($senha);
 $retorno;
 if($usuarioDao->Inserir($usuario)){
      $retorno=  array(
-    "mensagem"=>"Usuário Cadastrado com sucesso"
+    "mensagem"=>"Usuário Cadastrado com sucesso",
+         "style"=>"Green"
     );
 }  else if(mysql_error()) {
      $retorno=  array(
-    "mensagem"=>"Erro ao cadastrar usuário"
+    "mensagem"=>"Erro ao cadastrar usuário",
+         "style"=>"Red"
     );
 }
 
@@ -28,7 +30,8 @@ if($usuarioDao->Inserir($usuario)){
 echo json_encode($retorno);
 }else{
     $retorno=  array(
-    "mensagem"=>"Usuário ou  Senha não preenchidos"
+    "mensagem"=>"Usuário ou  Senha não preenchidos",
+        "style"=>"Red"
     );
     echo json_encode($retorno);
 }

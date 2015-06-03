@@ -10,7 +10,7 @@ $(document).ready(function() {
         var senhaPost = senha.val();          
         $.post("cadastroUsuario.php", {login: loginPost, senha: senhaPost},
         function(data){
-       div.style.color="Green";
+       div.style.color=data.style;
         div.innerHTML=data.mensagem;
          }
          , "json");

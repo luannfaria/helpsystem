@@ -7,7 +7,7 @@ if(!isset ($_SESSION['validado']) == true){
      unset($_SESSION['validado']);
     $retorno = array(
         "validado"=> false,
-        "urlRetorno"=>"error.html"
+        "urlRetorno"=>"errorSession.html"
         
     );
     
