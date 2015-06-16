@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="stilo.css" type="text/css" />
 <title>Relatorios</title>
+<script  src="js/jquery-1.11.2.min.js"></script>
 </head>
 <body>
 
@@ -21,8 +22,8 @@
 		<div id="divrelatorio">
 			<fieldset>
 				<legend>Por data</legend>
-				DE<input type="date">
-				ATÉ<input type="date">
+                                DE<input type="date" onkeyup="Formatadata(this,event)"  maxlength="10">
+				ATÉ<input type="date" onkeyup="Formatadata(this,event)" maxlength="10">
 				<input id="imgentrar" type="image" title="Gerar Relatorio" src="imagens/entrar.png" value="submit" />
 			</fieldset>
 			<form method="post" action="gerarelatorio.php">
@@ -38,5 +39,7 @@
 			</form>
 		</div>
 	</div>
+<script  src="js/validaSession.js"></script>
+<script src="js/relatorios.js"></script>
 </body>
 </html>
