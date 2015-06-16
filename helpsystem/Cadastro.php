@@ -2,20 +2,22 @@
 include_once 'conexao.php';
 $id=0;
 $nome = $_POST ['nome'];
-$cpf = $_POST ['cpf'];
+$cpformatando = str_replace(".", "", $_POST ['cpf']) ;
 $rua = $_POST ['rua'];
 $bairro = $_POST['bairro'];
 $numero = $_POST['numero'];
 $cidade=$_POST['cidade'];
-$telefone=$_POST['telefone'];
-$cep = $_POST['cep'];
+$telefone=str_replace("-", "", $_POST ['telefone']) ;
+$cep = str_replace("-", "", $_POST ['cep']) ;
+$cpf = str_replace("-", "", $cpformatando) ;
+
 
 
 
 if(!($nome)||!($cpf)||!($rua)||!($bairro)||!($numero)||!($cidade)||!($telefone)){
-    
+     echo "<script>location.href='cadastrocliente.html'</script>";
     echo "<script>alert('Preencha os campos!')</script>"; 
-    
+   
 }
 //$queryid="select max('id') from cliente";
 //$resultid=mysql_query($queryid);
@@ -28,8 +30,9 @@ if($insert){
     echo "<script>alert('Cliente Cadastrado com Sucesso')</script>"; 
     	
 }else{
+    echo "<script>location.href='cadastrocliente.html'</script>";
     echo "<script>alert('Erro Ao Cadastrar')</script>";
- 
+    
     
 }
 /* 
