@@ -11,31 +11,49 @@
 <div id="menuprincipal" style="background-image: url(imagens/backmenu.jpg)">
 	
 <ul>
-	<a href="cadastrocliente.html"><img id="imgmenu" title="Clientes" src="imagens/client.png"></a><br>
-	<a href="chamado.html"><img id="imgmenu" title="Chamados" src="imagens/support.png"></a><br>
+	<a href="Clientes.html"><img id="imgmenu" title="Clientes" src="imagens/client.png"></a><br>
+	<a href="listachamado.php"><img id="imgmenu" title="Chamados" src="imagens/support.png"></a><br>
 	<a href="relatorios.html"><img id="imgmenu" title="Relatorio" src="imagens/relatorio.png"></a><br>
 	<a href="usuario.html"><img id="imgmenu" title="Configurações" src="imagens/configure.png"></a>
 </ul>
 </div>
 	<div id="divcentral">
+	<div id="rel">
+		<fieldset>
+		<legend>RELATORIOS</legend>
 		<div id="divrelatorio">
+		<form method="post" action="relatoriodata.php">
 			<fieldset>
 				<legend>Por data</legend>
-				DE<input type="date">
-				ATÉ<input type="date">
+				DE<input type="date" name="de">
+				ATÉ<input type="date" name="ate">
 				<input id="imgentrar" type="image" title="Gerar Relatorio" src="imagens/entrar.png" value="submit" />
 			</fieldset>
+			</form>
 			<form method="post" action="gerarelatorio.php">
 			<fieldset>
 			
 				<legend>Por status</legend>
-					<input type=radio name="status" value="0">Aberto<BR>
-					<input type=radio name="status" value="1">Fechado<BR>
-					<input type=radio name="status" value="2">Todos<P>
+					<input type=radio name="status" value="ABERTO">Aberto<BR>
+					<input type=radio name="status" value="FECHADO">Fechado<BR>
+					<input type=radio name="status" value="">Todos<P>
 
 					<input id="imgentrar" type="image" title="Gerar Relatorio" src="imagens/entrar.png" value="submit" />
 			</fieldset>
 			</form>
+		</div>
+		</fieldset>
+	</div>
+		<div id="graficos">
+			<fieldset>
+				<legend>GRAFICOS</legend>
+					<fieldset>
+				<legend>Por data</legend>
+				DE<input type="date">
+				ATÉ<input type="date">
+				<input id="imgentrar" type="image" title="Gerar Grafico" src="imagens/entrar.png" value="submit" />
+			</fieldset>
+			</fieldset>
 		</div>
 	</div>
 </body>

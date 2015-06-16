@@ -1,10 +1,10 @@
 <?php
-$host="db4free.net";
+$host="localhost";
 //Banco Local
 
-$user = "helpsystemdb";
+$user = "root";
 $pass = "clara02";
-$banco = "helpsystem";
+$banco = "local";
 
 //Banco Online
 
