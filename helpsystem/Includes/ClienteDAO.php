@@ -27,7 +27,7 @@ class ClienteDAO {
 
 
         $query = mysql_query("SELECT * from cliente where id='$id'") or die("erro ao selecionar");
-        $cliente = new Cliente();
+       /* $cliente = new Cliente();
         while ($row = mysql_fetch_object($query)) {
             $cliente->setBairro($row->bairro);
             $cliente->setCep($row->cep);
@@ -38,7 +38,8 @@ class ClienteDAO {
             $cliente->setNumero($row->numero);
             $cliente->setRua($row->rua);
             $cliente->setTelefone($row->telefone);
-        }
+        }*/
+        $cliente = mysql_fetch_object($query);
         return $cliente;
     }
 

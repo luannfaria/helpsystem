@@ -39,9 +39,9 @@
 
 
             $(".alterar-item").on("click", function (event) {
-                var idItem = $(this).attr("data-id");
-                	alert(idItem);
+                var idCliente = $(this).attr("data-id");
                 	
+                	window.open("AlterarCliente.html?id="+idCliente,"Alterar Cliente","width=200, height=100")
 
             });
 

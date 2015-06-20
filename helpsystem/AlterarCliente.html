@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Cadastro Cliente</title>
+<link rel="stylesheet" href="stilo.css" type="text/css" />
+<script  src="js/jquery-1.11.2.min.js"></script>
+<script src="js/alterarCliente.js"></script>
+</head>
+<body>
+<h1>Cadastro de Cliente</h1>
+	
+<form method="post" action="cadastro.php">
+	<div id="divcentral">
+		<div id="divcliente">
+			<fieldset>
+	<legend>Alterar Cliente</legend>
+			<label>Nome Completo</label>
+                        <input type="hidden" name="id" >
+				<input type="text" required name="nome"/>
+			<label>CPF</label>
+                        <input type="text" name="cpf" required onkeyup="FormataCpf(this,event)" onkeypress='return SomenteNumero(event)'  maxlength="14"/><br>
+			<label>Rua</label> 
+				<input type="text" name="rua"/>	
+			<label>Bairro</label>
+				<input type="text" name="bairro"/>
+			<label>Numero</label> 
+				<input type="text" name="numero" onkeypress='return SomenteNumero(event)'/>	
+			<label>Cidade</label>
+					<input type="text" name="cidade"/><br>
+             <label>Telefone</label>
+             <input type="text" required pattern= "\d{7}-?\d{4}" maxlength="12" name="telefone"/><br>
+             <label>Cep</label>
+             <input type="text"  name="cep" required pattern= "\d{5}-?\d{3}" maxlength="9"/><br>
+             <input id="imgentrar"  type="image" src="imagens/add.png" title="Adicionar Cliente" value="submit" />
+		 </fieldset>
+	</div>
+	</div>
+</form>	
+<script  src="js/validaSession.js"></script>
+</body>
+
+</html>
