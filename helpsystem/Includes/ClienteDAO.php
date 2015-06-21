@@ -56,6 +56,27 @@ class ClienteDAO {
 
         return $clientes;
     }
+     public function updateCliente(Cliente $cliente){
+        $id = $cliente->getId();
+        $bairro = $cliente->getBairro();
+        $cep = $cliente->getCep();
+        $cidade = $cliente->getCidade();
+        $cpf = $cliente->getCpf();
+        $nome = $cliente->getNome();
+        $numero = $cliente->getNumero();
+        $rua = $cliente->getRua();
+        $telefone = $cliente->getTelefone();
+        
+        $query = mysql_query("update  cliente set nome='$nome',cpf='$cpf',telefone='$telefone',rua='$rua',numero='$numero',bairro='$bairro',cidade='$cidade',cep='$cep' where id='$id'") or die("erro ao selecionar");
+        
+        return $query;
+    }
+    
+    public function deletarCliente($id){
+        
+        
+    }
+   
 
 }
 ?>

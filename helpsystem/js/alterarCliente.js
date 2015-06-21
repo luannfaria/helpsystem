@@ -20,15 +20,45 @@ $(document).ready(function () {
             $('[name="telefone"]').val(data["telefone"]);
             $('[name="cep"]').val(data["cep"]);
             $('[name="id"]').val(data["id"]);
-                
 
         }
-
-
+        
     });
-
-
+    
 });
+
+ $(document).on('submit','form',function (e) {
+           
+                alert("Alterou");
+                $.ajax({
+                    type: 'POST',
+                    url: 'updateCliente.php',
+                    dataType: "Json",
+                    data:{
+                        id:$('[name="id"]').val(),
+                        nome: $('[name="nome"]').val(),
+                        cpf:$('[name="cpf"]').val() ,
+                        rua: $('[name="rua"]').val(),
+                        bairro:$('[name="bairro"]').val(),
+                        numero:$('[name="numero"]').val(),
+                        cidade:$('[name="cidade"]').val(),
+                        telefone:$('[name="telefone"]').val(),
+                        cep:$('[name="cep"]').val()
+                        
+                        
+                     },
+                      success: function (data) {
+                          alert(data.mensagem);
+                          window.opener.location.reload();
+                          window.close();
+                           
+                      }
+                    
+                });
+                e.preventDefault();
+                 
+            });
+ 
 
 
 
@@ -39,21 +69,6 @@ function requestQueryString(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Funções de validação do formulário
 function FormataCpf(campo, teclapres)

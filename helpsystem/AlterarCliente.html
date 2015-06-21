@@ -10,7 +10,7 @@
 <body>
 <h1>Cadastro de Cliente</h1>
 	
-<form method="post" action="cadastro.php">
+<form method="post" >
 	<div id="divcentral">
 		<div id="divcliente">
 			<fieldset>
@@ -32,7 +32,7 @@
              <input type="text" required pattern= "\d{7}-?\d{4}" maxlength="12" name="telefone"/><br>
              <label>Cep</label>
              <input type="text"  name="cep" required pattern= "\d{5}-?\d{3}" maxlength="9"/><br>
-             <input id="imgentrar"  type="image" src="imagens/add.png" title="Adicionar Cliente" value="submit" />
+             <input id="imgentrar"  type="submit" src="imagens/add.png" title="Adicionar Cliente" value="submit" onclick="alterar()" />
 		 </fieldset>
 	</div>
 	</div>

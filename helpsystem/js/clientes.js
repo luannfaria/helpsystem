@@ -29,7 +29,7 @@
                      row += "<td>" + msg[key]["cidade"] + "</td>";
                       row += "<td>" + msg[key]["cep"] + "</td>";
                     row += "<td><button class='alterar-item' data-id='" + msg[key]["id"] + "'  >Alterar</button></td>";
-                    row += "<td><button class='delete' >Deletar</button></td>";
+                    row += "<td><button class='delete' data-id='" + msg[key]["id"] + "' >Deletar</button></td>";
                     row += "</tr>";
                 }
             }
@@ -41,8 +41,23 @@
             $(".alterar-item").on("click", function (event) {
                 var idCliente = $(this).attr("data-id");
                 	
-                	window.open("AlterarCliente.html?id="+idCliente,"Alterar Cliente","width=200, height=100")
+                	window.open("AlterarCliente.html?id="+idCliente,"Alterar Cliente","width=200, height=100");
+                        
 
+            });
+            
+             $(".delete").on("click", function (event) {
+                var idCliente = $(this).attr("data-id");
+                	confirm("Tem certeza de deletar esse cliente ?");
+                $.ajax({
+                        type: 'POST',
+                        url: 'deletarCliente.php',
+                        
+                        data:{id:idCliente},
+                        sucess:function (data){
+                            alert(data);
+                        }
+                    });
             });
 
         }
