@@ -1,17 +1,26 @@
 <?php
 include 'includes/ClienteDAO.php';
-
+ 
 $id = $_POST["id"];
 
 
 $clienteDao = new ClienteDAO();
+$retorno;
 
+if($clienteDao->deletarCliente($id)){
+         $retorno ="Cliente removido com sucesso!";
+   }else{   
+      $retorno = "Não foi possivel remover o cliente!";   
 
-        $retorno = array(
-    "mensagem"=>"foi no php",
+} if(mysql_error()){
+     $retorno ="Não foi possivel remover o cliente Exclua o atendimento!";
     
-);
+}
+
+
+
+ 
         
-echo json_encode($retorno);
+echo $retorno;
         
 

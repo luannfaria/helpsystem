@@ -75,6 +75,15 @@ class ClienteDAO {
     public function deletarCliente($id){
         
         
+         $query = mysql_query("delete from cliente where id ='$id'");
+        
+         
+         if(mysql_affected_rows()==0){
+             return FALSE;
+         }else{
+          return TRUE ;   
+         }
+         
     }
    
 
