@@ -15,7 +15,7 @@
             for (var key in msg) {
                 if (msg.hasOwnProperty(key)) {
                     row += "<tr>";
-                    row += "<td>" + msg[key]["Id"] + "</td>";
+                    row += "<td>" + msg[key]["id"] + "</td>";
                     row += "<td>" + msg[key]["nome"] + "</td>";
                     row += "<td>" + msg[key]["cpf"] + "</td>";
                     row += "<td>" + msg[key]["telefone"] + "</td>";
@@ -24,8 +24,8 @@
                     row += "<td>" + msg[key]["bairro"] + "</td>";
                     row += "<td>" + msg[key]["cidade"] + "</td>";
                     row += "<td>" + msg[key]["cep"] + "</td>";
-                    row += "<td><button class='alterar-item' data-id='" + msg[key]["Id"] + "'  >Alterar</button></td>";
-                    row += "<td><button type='submit' class='delete' data-id='" + msg[key]["Id"] + "' >Deletar</button></td>";
+                    row += "<td><button class='alterar-item' data-id='" + msg[key]["id"] + "'  >Alterar</button></td>";
+                    row += "<td><button type='submit' class='delete' data-id='" + msg[key]["id"] + "' >Deletar</button></td>";
                     row += "</tr>";
                 }
             }

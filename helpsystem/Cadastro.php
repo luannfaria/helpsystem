@@ -28,6 +28,7 @@ $insert = mysql_query($query);
 if($insert){
     
     echo "<script>alert('Cliente Cadastrado com Sucesso')</script>"; 
+    echo "<script>location.href='CLientes.html'</script>";
     	
 }else{
     echo "<script>location.href='cadastrocliente.html'</script>";

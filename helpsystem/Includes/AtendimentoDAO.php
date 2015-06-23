@@ -51,7 +51,19 @@ class AtendimentoDAO {
 
         return $atendimento;
     }
-
+	//listar todos chamados na tela
+    public function listarChamados() {
+    
+    	$query = mysql_query("SELECT * from atendimento") or die("erro ao Buscar");
+    
+    	//Instanciando a lista ou Array de clientes
+    	$chamados = array();
+    	while ($row = mysql_fetch_assoc($query)) {
+    		$chamados[] = $row;
+    	}
+    
+    	return $chamados;
+    }
     //Função para buscar todos os atendimentos por  status
     public function buscaPorStatus($status) {
         if ($status =="") {
