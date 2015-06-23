@@ -18,7 +18,7 @@ $pdf->Cell(90,20,'N.Chamado',1,0,"L");
 $pdf->Cell(120,20,'Nome cliente',1,0,"L");
 $pdf->Cell(120,20,'Titulo',1,0,"L");
 $pdf->Cell(90,20,'Data',1,0,"L");
-$pdf->Cell(115,20,'OBS',1,1,"L");
+$pdf->Cell(115,20,'DESC',1,1,"L");
 
  
 //linhas da tabela
@@ -31,7 +31,7 @@ $total = mysql_num_rows($query);
 while($linha = mysql_fetch_array($query)){
 
     $pdf->Cell(90,20,$linha['id'],2,0,"L");
-    $pdf->Cell(120,20,$linha['id_cliente'],2,0,"L");
+    $pdf->Cell(120,20,$linha['nomecliente'],2,0,"L");
     $pdf->Cell(120,20,$linha['titulo'],2,0,"L");
     $pdf->Cell(90,20,$linha['data'],2,0,"L");
     $pdf->Cell(115,20,$linha['observacao'],2,1,"L");

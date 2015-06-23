@@ -46,7 +46,7 @@ class AtendimentoDAO {
             $atendimento->setObservacao($row->observacao);
             $atendimento->setStatus($row->status);
             $atendimento->setTitulo($row->titulo);
-            $atendimento->setId_usuario($row->id_usuario);
+            
         }
 
         return $atendimento;
@@ -80,6 +80,19 @@ class AtendimentoDAO {
         }
 
         return $atendimentos;
+    }
+    public function deletarChamado($id){
+    
+    
+    	$query = mysql_query("delete from atendimento where id ='$id'");
+    
+    	 
+    	if(mysql_affected_rows()==0){
+    		return FALSE;
+    	}else{
+    		return TRUE ;
+    	}
+    	 
     }
 
 }

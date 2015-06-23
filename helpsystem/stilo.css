@@ -22,6 +22,8 @@ input[type='text'] {
 	-webkit-border-radius: 6px;
 	background-color:#DCDCDC;
 	border: 1px solid #000;
+	height: 20px;
+	width: 300px;
 }
 input[type='password'] {
 	-webkit-border-radius: 6px;
@@ -100,13 +102,13 @@ h1{
 	margin-top:10px;
 }
 #lista{
-	width: 700px;
+	width: 900px;
 	margin: 50px auto;	
 	margin-top:10px;
 	
 }
 #divcentral {
-	width: 700px;
+	width: 900px;
 	margin: 50px auto;	
 	margin-top:10px;
 }
@@ -116,5 +118,10 @@ h1{
 }
 #buttoneditar{
 	width: 26px;
+	
+}
+td{
+	background-color:#87CEEB;
+	
 	
 }
